@@ -11,18 +11,17 @@ import Cocoa
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     var folders : Array<String> = []
+    let documentsUrl = "/Users/Seth/Desktop"
     
     @IBOutlet var foldersTable: NSTableView!
+
+    @IBOutlet var broseTextField: NSTextField!
+    @IBOutlet var folderNameTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        foldersTable.wantsLayer = true
-
-        foldersTable.layer?.borderWidth = 3
-        foldersTable.layer?.borderColor = NSColor().CGColor
         
-        let documentsUrl = "/Users/Seth/Desktop"
+        
         var files : [String]?
         let filemanager:NSFileManager = NSFileManager.defaultManager()
         do {
@@ -88,6 +87,72 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 42
     }
+    
+    
+    @IBAction func broseButton(sender: AnyObject) {
+        let openPanel = NSOpenPanel()
+        
+        openPanel.allowsMultipleSelection  = false
+        openPanel.canChooseDirectories     = true
+        openPanel.canCreateDirectories     = true
+        openPanel.canChooseFiles           = false
+        
+        openPanel.beginWithCompletionHandler { (result) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+                
+                let url = openPanel.URL?.path
+                
+                self.broseTextField.stringValue = url!
+                
+            }
+        }
+        
+    }
+    
+    // Create dialog box on screen
+    func popup(question: String, text: String) -> Bool {
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = question
+        myPopup.informativeText = text
+        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
+        myPopup.addButtonWithTitle("OK")
+        let res = myPopup.runModal()
+        if res == 1000 {
+            return true
+        }
+        return false
+    }
+    
+    @IBAction func CopyTemplate(sender: AnyObject) {
+        
+        let dest = broseTextField.stringValue
+        let foldername = folderNameTextField.stringValue
+        let templatePath = documentsUrl + "/" + folders[ foldersTable.selectedRow ]
+        
+        if broseTextField.stringValue != "" && foldername != "" {
+        
+            let nsfile : NSFileManager = NSFileManager.defaultManager()
+            
+            let destPath = dest + "/" + foldername
+
+            do {
+            
+                try nsfile.copyItemAtPath( templatePath , toPath: destPath  )
+                popup("Success", text: "Template copied successfully")
+                
+            } catch let error as NSError {
+            
+                popup( "Error while creation" , text: "info: \(error.description)" )
+                print( error.description )
+            
+            }
+            
+        } else {
+            popup( "Error" , text: "Compile all texts" )
+        }
+    
+    }
+    
 
 }
 

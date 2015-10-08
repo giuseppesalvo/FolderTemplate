@@ -670,11 +670,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" id="f4d-Qq-s5L">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="293"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-Q2-J71">
-                                <rect key="frame" x="20" y="128" width="410" height="135"/>
+                                <rect key="frame" x="20" y="121" width="410" height="135"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="sFV-pw-ZLn">
                                     <rect key="frame" x="0.0" y="0.0" width="410" height="135"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -748,29 +748,58 @@
                                     <animations/>
                                 </scroller>
                             </scrollView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-me-OGp">
+                                <rect key="frame" x="20" y="91" width="301" height="22"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Destination folder" drawsBackground="YES" id="QMU-I4-StD">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-4c-Yml">
+                                <rect key="frame" x="323" y="85" width="113" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nXX-o9-BDk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="broseButton:" target="XfG-lQ-9wD" id="gFJ-fG-myO"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-AX-Avl">
+                                <rect key="frame" x="20" y="59" width="410" height="22"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name of new folder" drawsBackground="YES" id="cFT-1g-0ff">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-fu-kkc">
+                                <rect key="frame" x="169" y="13" width="113" height="32"/>
+                                <animations/>
+                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6dP-mA-FBv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="CopyTemplate:" target="XfG-lQ-9wD" id="Jfk-VH-8ir"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                     </visualEffectView>
                     <connections>
+                        <outlet property="broseTextField" destination="3PO-me-OGp" id="M40-S0-99S"/>
+                        <outlet property="folderNameTextField" destination="q5N-AX-Avl" id="4h3-wx-MQl"/>
                         <outlet property="foldersTable" destination="qFu-Jp-dSK" id="yo8-dp-oMq"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="695"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Xwo-qj-Z9x">
-            <objects>
-                <viewController id="E2H-vt-vPA" sceneMemberID="viewController">
-                    <view key="view" id="hAr-V2-aQZ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </view>
-                </viewController>
-                <customObject id="7OQ-nC-pQd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="60" y="600.5"/>
         </scene>
     </scenes>
     <resources>
