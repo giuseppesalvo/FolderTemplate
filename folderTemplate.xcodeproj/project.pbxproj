@@ -13,6 +13,7 @@
 		5D21FCB91BC704960009ABEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D21FCB71BC704960009ABEF /* Main.storyboard */; };
 		5D21FCC41BC704960009ABEF /* folderTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D21FCC31BC704960009ABEF /* folderTemplateTests.swift */; };
 		5D21FCCF1BC704960009ABEF /* folderTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D21FCCE1BC704960009ABEF /* folderTemplateUITests.swift */; };
+		5D21FCDD1BC718230009ABEF /* CustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D21FCDC1BC718230009ABEF /* CustomRow.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		5D21FCCA1BC704960009ABEF /* folderTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = folderTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D21FCCE1BC704960009ABEF /* folderTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = folderTemplateUITests.swift; sourceTree = "<group>"; };
 		5D21FCD01BC704960009ABEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D21FCDC1BC718230009ABEF /* CustomRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5D21FCB11BC704960009ABEF /* AppDelegate.swift */,
+				5D21FCDC1BC718230009ABEF /* CustomRow.swift */,
 				5D21FCB31BC704960009ABEF /* ViewController.swift */,
 				5D21FCB51BC704960009ABEF /* Assets.xcassets */,
 				5D21FCB71BC704960009ABEF /* Main.storyboard */,
@@ -253,6 +256,7 @@
 			files = (
 				5D21FCB41BC704960009ABEF /* ViewController.swift in Sources */,
 				5D21FCB21BC704960009ABEF /* AppDelegate.swift in Sources */,
+				5D21FCDD1BC718230009ABEF /* CustomRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +478,7 @@
 				5D21FCD51BC704960009ABEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D21FCD61BC704960009ABEF /* Build configuration list for PBXNativeTarget "folderTemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +487,7 @@
 				5D21FCD81BC704960009ABEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D21FCD91BC704960009ABEF /* Build configuration list for PBXNativeTarget "folderTemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +496,7 @@
 				5D21FCDB1BC704960009ABEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
