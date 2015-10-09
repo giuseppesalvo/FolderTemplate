@@ -24,6 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func ReloadFoldersFromMenu(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
     }
+    
+    //Quit application on window close
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
+    }
 
 }
 
