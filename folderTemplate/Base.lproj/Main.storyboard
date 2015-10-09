@@ -32,6 +32,12 @@
                                                 <action selector="ReloadFoldersFromMenu:" target="Voe-Tx-rLC" id="Xmq-2R-kiK"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Reset app ( this will close the app )" id="Xo9-J8-J6k">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="ResetApplication:" target="Voe-Tx-rLC" id="kQO-Oz-rNv"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -353,6 +359,6 @@
         <image name="folder" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wAK-Vj-sLH"/>
+        <segue reference="ABl-Sj-kUi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
     }
@@ -23,6 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBAction func ReloadFoldersFromMenu(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
+    }
+    @IBAction func ResetApplication(sender: AnyObject) {
+        
+        let appDomain = NSBundle.mainBundle().bundleIdentifier!
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+        exit(0)
+    
     }
     
     //Quit application on window close

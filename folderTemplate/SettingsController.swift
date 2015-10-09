@@ -81,11 +81,22 @@ class SettingsController: NSViewController {
         
         if folderURLString != "" {
             
-            NSUserDefaults.standardUserDefaults().setObject(folderURLString, forKey: "templatesFolder" )
+            var isDirectory: ObjCBool = false
+            NSFileManager.defaultManager().fileExistsAtPath( folderURLString , isDirectory: &isDirectory)
             
-            popup("Message", text: "Folder saved successfully")
+            if isDirectory {
             
-            NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
+                NSUserDefaults.standardUserDefaults().setObject(folderURLString, forKey: "templatesFolder" )
+                
+                popup("Message", text: "Folder saved successfully")
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
+            
+            } else {
+                popup("Error", text: "The url isn't a folder")
+            }
+            
+            
             
         } else {
             popup("Error", text: "Insert a folder url")

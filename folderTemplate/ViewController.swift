@@ -33,12 +33,6 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
         
         loadFolders()
-        
-        /* Reset
-        let appDomain = NSBundle.mainBundle().bundleIdentifier!
-        
-        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
-        */
     }
     
     func reloadTable () {
