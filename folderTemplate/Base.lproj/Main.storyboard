@@ -200,24 +200,24 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="XSF-72-Z66">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="351"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-Q2-J71">
-                                <rect key="frame" x="20" y="145" width="410" height="135"/>
+                                <rect key="frame" x="20" y="165" width="300" height="156"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="sFV-pw-ZLn">
-                                    <rect key="frame" x="0.0" y="0.0" width="410" height="135"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="156"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="42" rowSizeStyle="automatic" viewBased="YES" id="qFu-Jp-dSK">
-                                            <rect key="frame" x="0.0" y="0.0" width="410" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="156"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                             <color key="gridColor" white="1" alpha="0.10000000000000001" colorSpace="deviceWhite"/>
                                             <tableColumns>
-                                                <tableColumn identifier="" editable="NO" width="407" minWidth="40" maxWidth="1000" id="dDo-Vy-EU2">
+                                                <tableColumn identifier="" editable="NO" width="297" minWidth="40" maxWidth="1000" id="dDo-Vy-EU2">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -231,16 +231,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView focusRingType="exterior" id="EaH-60-zhb" customClass="CustomCell" customModule="folderTemplate" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="407" height="42"/>
+                                                            <rect key="frame" x="1" y="1" width="297" height="42"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG9-FD-8fA">
-                                                                    <rect key="frame" x="18" y="5" width="32" height="32"/>
-                                                                    <animations/>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="folder" id="KBj-jB-dmY"/>
-                                                                </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OG7-sZ-axD">
-                                                                    <rect key="frame" x="64" y="3" width="279" height="26"/>
+                                                                    <rect key="frame" x="41" y="4" width="280" height="26"/>
                                                                     <animations/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YF8-LO-3kM">
                                                                         <font key="font" metaFont="system"/>
@@ -248,6 +243,16 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-zN-p2x">
+                                                                    <rect key="frame" x="3" y="0.0" width="316" height="1"/>
+                                                                    <animations/>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="separator" id="OYk-jj-faw"/>
+                                                                </imageView>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG9-FD-8fA">
+                                                                    <rect key="frame" x="3" y="7" width="32" height="32"/>
+                                                                    <animations/>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="folder" id="KBj-jB-dmY"/>
+                                                                </imageView>
                                                             </subviews>
                                                             <animations/>
                                                             <connections>
@@ -268,7 +273,7 @@
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="h19-lL-iUI">
-                                    <rect key="frame" x="0.0" y="119" width="410" height="16"/>
+                                    <rect key="frame" x="0.0" y="160" width="325" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -279,60 +284,27 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-me-OGp">
-                                <rect key="frame" x="20" y="115" width="301" height="22"/>
+                                <rect key="frame" x="18" y="118" width="216" height="22"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Destination folder" drawsBackground="YES" id="QMU-I4-StD">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Destination folder" id="QMU-I4-StD">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-4c-Yml">
-                                <rect key="frame" x="323" y="109" width="113" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nXX-o9-BDk">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="broseButton:" target="XfG-lQ-9wD" id="gFJ-fG-myO"/>
-                                </connections>
-                            </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-AX-Avl">
-                                <rect key="frame" x="20" y="83" width="410" height="22"/>
+                                <rect key="frame" x="18" y="74" width="216" height="22"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name of new folder" drawsBackground="YES" id="cFT-1g-0ff">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Name of new folder" id="cFT-1g-0ff">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-hH-9Eh">
-                                <rect key="frame" x="14" y="37" width="173" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="open template folders" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tW5-EH-cwa">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="openTemplateFolder:" target="XfG-lQ-9wD" id="2yU-jQ-LVZ"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-fu-kkc">
-                                <rect key="frame" x="197" y="37" width="113" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6dP-mA-FBv">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="CopyTemplate:" target="XfG-lQ-9wD" id="Jfk-VH-8ir"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-aq-RkU">
-                                <rect key="frame" x="343" y="37" width="93" height="32"/>
+                                <rect key="frame" x="320" y="331" width="14" height="14"/>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z35-7H-lMU">
+                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="settings" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="z35-7H-lMU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -341,22 +313,70 @@
                                     <segue destination="aKy-J0-m9Y" kind="show" id="wAK-Vj-sLH"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-4c-Yml">
+                                <rect key="frame" x="246" y="116" width="74" height="26"/>
+                                <animations/>
+                                <buttonCell key="cell" type="bevel" title="Browse" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="nXX-o9-BDk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="broseButton:" target="XfG-lQ-9wD" id="gFJ-fG-myO"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emM-zj-YQQ">
+                                <rect key="frame" x="20" y="116.5" width="223" height="1"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="axesIndependently" image="separator" id="aNC-xZ-a4d"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87H-Wd-UPH">
+                                <rect key="frame" x="20" y="74" width="300" height="1"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="separator" id="Ew0-Fl-z9u"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRz-Vr-75w">
+                                <rect key="frame" x="298" y="331" width="14" height="14"/>
+                                <animations/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="update" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="OOa-yG-EUk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="reloadTableButton:" target="XfG-lQ-9wD" id="bjg-3a-gZ6"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-fu-kkc">
+                                <rect key="frame" x="133" y="22" width="74" height="26"/>
+                                <animations/>
+                                <buttonCell key="cell" type="bevel" title="Create" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6dP-mA-FBv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="CopyTemplate:" target="XfG-lQ-9wD" id="Jfk-VH-8ir"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                     </view>
                     <connections>
                         <outlet property="broseTextField" destination="3PO-me-OGp" id="M40-S0-99S"/>
+                        <outlet property="browseButton" destination="zhf-4c-Yml" id="2B2-wQ-oKA"/>
+                        <outlet property="createButton" destination="nRk-fu-kkc" id="khO-Ey-iN0"/>
                         <outlet property="folderNameTextField" destination="q5N-AX-Avl" id="4h3-wx-MQl"/>
                         <outlet property="foldersTable" destination="qFu-Jp-dSK" id="yo8-dp-oMq"/>
                         <outlet property="settingsButton" destination="6wx-aq-RkU" id="9lH-Bu-oJ2"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="148" y="766"/>
+            <point key="canvasLocation" x="118" y="789.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="folder" width="256" height="256"/>
+        <image name="separator" width="400" height="1"/>
+        <image name="settings" width="256" height="256"/>
+        <image name="update" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wAK-Vj-sLH"/>

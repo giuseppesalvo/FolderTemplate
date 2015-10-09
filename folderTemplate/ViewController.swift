@@ -18,12 +18,42 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     @IBOutlet var broseTextField: NSTextField!
     @IBOutlet var folderNameTextField: NSTextField!
     
+    @IBOutlet var createButton: NSButton!
+    @IBOutlet var browseButton: NSButton!
     @IBOutlet weak var settingsButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         broseTextField.focusRingType = .None
         folderNameTextField.focusRingType = .None
+        
+        browseButton.wantsLayer = true
+        browseButton.layer?.cornerRadius = 4
+        browseButton.layer?.borderWidth = 1
+        let colorBlue : NSColor = NSColor( red: 42.0/255, green: 157.0/255, blue: 234.0/255, alpha: 1.0 )
+        browseButton.layer?.borderColor = colorBlue.CGColor
+        
+        createButton.wantsLayer = true
+        createButton.layer?.cornerRadius = 4
+        createButton.layer?.backgroundColor = colorBlue.CGColor
+        
+        /*
+        NSColor *color = [NSColor greenColor];
+        NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
+        NSRange titleRange = NSMakeRange(0, [colorTitle length]);
+        [colorTitle addAttribute:NSForegroundColorAttributeName value:color range:titleRange];
+        [button setAttributedTitle:colorTitle];
+        */
+        
+        let coloredTitle : NSMutableAttributedString = NSMutableAttributedString(attributedString: browseButton.attributedTitle ) as NSMutableAttributedString
+        let range : NSRange = NSMakeRange(0, coloredTitle.length)
+        coloredTitle.addAttribute(NSForegroundColorAttributeName, value: colorBlue, range: range)
+        browseButton.attributedTitle = coloredTitle
+        
+        let coloredTitlee : NSMutableAttributedString = NSMutableAttributedString(attributedString: createButton.attributedTitle ) as NSMutableAttributedString
+        let rangee : NSRange = NSMakeRange(0, coloredTitlee.length)
+        coloredTitlee.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: rangee)
+        createButton.attributedTitle = coloredTitlee
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadFolders", name:"ReloadFoldersTable", object: nil)
         
@@ -183,6 +213,9 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             popup( "Error" , text: "Compile all texts" )
         }
     
+    }
+    @IBAction func reloadTableButton(sender: AnyObject) {
+        loadFolders()
     }
 
     @IBAction func openTemplateFolder(sender: AnyObject) {
