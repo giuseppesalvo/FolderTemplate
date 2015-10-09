@@ -127,7 +127,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         let dest = broseTextField.stringValue
         let foldername = folderNameTextField.stringValue
-        let templatePath = documentsUrl + "/" + folders[ foldersTable.selectedRow ]
+        let selRow : Int = ( foldersTable.selectedRow > -1 ? foldersTable.selectedRow : 0 )
+        let templatePath = documentsUrl + "/" + folders[ selRow ]
         
         if broseTextField.stringValue != "" && foldername != "" {
         
