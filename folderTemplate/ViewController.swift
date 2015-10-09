@@ -11,32 +11,67 @@ import Cocoa
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     var folders : Array<String> = []
-    let documentsUrl = "/Users/Seth/Desktop"
+    var documentsUrl :String!
     
     @IBOutlet var foldersTable: NSTableView!
 
     @IBOutlet var broseTextField: NSTextField!
     @IBOutlet var folderNameTextField: NSTextField!
     
+    @IBOutlet weak var settingsButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var files : [String]?
-        let filemanager:NSFileManager = NSFileManager.defaultManager()
-        do {
-            files = try filemanager.contentsOfDirectoryAtPath(documentsUrl)
-        } catch let error as NSError {
-            print( error )
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadFolders", name:"ReloadFoldersTable", object: nil)
+        
+        if let docFold = NSUserDefaults.standardUserDefaults().objectForKey( "templatesFolder" ) {
+            documentsUrl = docFold as! String
+        } else {
+            popup("Message", text: "Go to settings and insert your templates folder")
         }
         
-        for f in files! {
-            var isDirectory: ObjCBool = false
-            filemanager.fileExistsAtPath(documentsUrl + "/" + f, isDirectory: &isDirectory)
-            if isDirectory {
-                self.folders.append( f )
+        loadFolders()
+        
+        /* Reset
+        let appDomain = NSBundle.mainBundle().bundleIdentifier!
+        
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+        */
+    }
+    
+    func reloadTable () {
+        if self.folders.count <= 0 {
+            self.folders.append("No folders Matched")
+        }
+        self.foldersTable.reloadData()
+    }
+    
+    func loadFolders () {
+        var files : [String]?
+        self.folders = []
+        
+        if let doc = NSUserDefaults.standardUserDefaults().objectForKey( "templatesFolder" ) {
+            self.documentsUrl = doc as! String
+            let filemanager:NSFileManager = NSFileManager.defaultManager()
+            do {
+                files = try filemanager.contentsOfDirectoryAtPath(self.documentsUrl)
+            } catch let error as NSError {
+                print( error )
+            }
+            
+            for f in files! {
+                var isDirectory: ObjCBool = false
+                filemanager.fileExistsAtPath(self.documentsUrl + "/" + f, isDirectory: &isDirectory)
+                if isDirectory {
+                    self.folders.append( f )
+                }
             }
         }
+        
+        self.reloadTable()
+        
     }
     
     // - - - - - - - - - - - - -
@@ -153,7 +188,13 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     
     }
-    
 
+    @IBAction func openTemplateFolder(sender: AnyObject) {
+        /*
+        NSString* folder = @"/path/to/folder"
+        [[NSWorkspace sharedWorkspace]openFile:folder withApplication:@"Finder"];
+        */
+        NSWorkspace.sharedWorkspace().openFile(self.documentsUrl, withApplication: "Finder" )
+    }
 }
 

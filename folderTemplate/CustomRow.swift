@@ -22,8 +22,7 @@ class CustomRowSelection: NSTableRowView {
 }
 
 class CustomCell : NSTableCellView {
-    
-   
+
     @IBOutlet var title: NSTextField!
     
 }

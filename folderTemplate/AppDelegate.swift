@@ -21,6 +21,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func ReloadFoldersFromMenu(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
+    }
 
 }
 
