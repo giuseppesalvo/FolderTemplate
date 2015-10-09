@@ -22,7 +22,8 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        broseTextField.focusRingType = .None
+        folderNameTextField.focusRingType = .None
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadFolders", name:"ReloadFoldersTable", object: nil)
         
@@ -79,6 +80,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         w.titleVisibility = .Hidden
         w.titlebarAppearsTransparent = true
         w.movableByWindowBackground = true
+        w.backgroundColor = NSColor.whiteColor()
     }
     
 

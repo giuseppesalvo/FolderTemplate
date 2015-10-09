@@ -133,18 +133,18 @@
                 </windowController>
                 <customObject id="OwL-oZ-3Y6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="275"/>
+            <point key="canvasLocation" x="675" y="173"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="dml-QX-ZLh">
             <objects>
                 <viewController storyboardIdentifier="SettingsController" id="aKy-J0-m9Y" customClass="SettingsController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="77M-oE-dy8">
-                        <rect key="frame" x="0.0" y="0.0" width="299" height="126"/>
+                    <view key="view" id="dvJ-Lq-Qih">
+                        <rect key="frame" x="0.0" y="0.0" width="344" height="126"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qi-dfs">
-                                <rect key="frame" x="20" y="54" width="154" height="22"/>
+                                <rect key="frame" x="43" y="54" width="154" height="22"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Type here the url" drawsBackground="YES" id="VwA-ue-I0Y">
                                     <font key="font" metaFont="system"/>
@@ -153,7 +153,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baC-WI-Yqc">
-                                <rect key="frame" x="41" y="89" width="216" height="17"/>
+                                <rect key="frame" x="64" y="89" width="216" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Templates Folder" id="XaZ-Ps-0vC">
                                     <font key="font" metaFont="system"/>
@@ -162,7 +162,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMG-2O-iYS">
-                                <rect key="frame" x="176" y="48" width="109" height="32"/>
+                                <rect key="frame" x="199" y="48" width="109" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WXp-0J-leB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHZ-uj-STP">
-                                <rect key="frame" x="14" y="13" width="271" height="32"/>
+                                <rect key="frame" x="37" y="13" width="271" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X8F-Pq-N1r">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -192,18 +192,19 @@
                 </viewController>
                 <customObject id="QdL-Ox-C1i" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675.5" y="556"/>
+            <point key="canvasLocation" x="797" y="542"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
-                    <visualEffectView key="view" appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" id="f4d-Qq-s5L">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="293"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="view" id="XSF-72-Z66">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-Q2-J71">
-                                <rect key="frame" x="20" y="121" width="410" height="135"/>
+                                <rect key="frame" x="20" y="145" width="410" height="135"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="sFV-pw-ZLn">
                                     <rect key="frame" x="0.0" y="0.0" width="410" height="135"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,7 +279,7 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-me-OGp">
-                                <rect key="frame" x="20" y="91" width="301" height="22"/>
+                                <rect key="frame" x="20" y="115" width="301" height="22"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Destination folder" drawsBackground="YES" id="QMU-I4-StD">
                                     <font key="font" metaFont="system"/>
@@ -287,7 +288,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-4c-Yml">
-                                <rect key="frame" x="323" y="85" width="113" height="32"/>
+                                <rect key="frame" x="323" y="109" width="113" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nXX-o9-BDk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -298,7 +299,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-AX-Avl">
-                                <rect key="frame" x="20" y="59" width="410" height="22"/>
+                                <rect key="frame" x="20" y="83" width="410" height="22"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Name of new folder" drawsBackground="YES" id="cFT-1g-0ff">
                                     <font key="font" metaFont="system"/>
@@ -307,7 +308,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-hH-9Eh">
-                                <rect key="frame" x="14" y="13" width="173" height="32"/>
+                                <rect key="frame" x="14" y="37" width="173" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="open template folders" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tW5-EH-cwa">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -318,7 +319,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-fu-kkc">
-                                <rect key="frame" x="197" y="13" width="113" height="32"/>
+                                <rect key="frame" x="197" y="37" width="113" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6dP-mA-FBv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -329,7 +330,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wx-aq-RkU">
-                                <rect key="frame" x="343" y="13" width="93" height="32"/>
+                                <rect key="frame" x="343" y="37" width="93" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z35-7H-lMU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -342,7 +343,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                    </visualEffectView>
+                    </view>
                     <connections>
                         <outlet property="broseTextField" destination="3PO-me-OGp" id="M40-S0-99S"/>
                         <outlet property="folderNameTextField" destination="q5N-AX-Avl" id="4h3-wx-MQl"/>
@@ -350,15 +351,14 @@
                         <outlet property="settingsButton" destination="6wx-aq-RkU" id="9lH-Bu-oJ2"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="556.5"/>
+            <point key="canvasLocation" x="148" y="766"/>
         </scene>
     </scenes>
     <resources>
         <image name="folder" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ABl-Sj-kUi"/>
+        <segue reference="wAK-Vj-sLH"/>
     </inferredMetricsTieBreakers>
 </document>

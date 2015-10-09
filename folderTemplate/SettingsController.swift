@@ -33,6 +33,7 @@ class SettingsController: NSViewController {
         w.titleVisibility = .Hidden
         w.titlebarAppearsTransparent = true
         w.movableByWindowBackground = true
+        w.backgroundColor = NSColor.whiteColor()
     }
     @IBAction func browseFolder(sender: AnyObject) {
         
