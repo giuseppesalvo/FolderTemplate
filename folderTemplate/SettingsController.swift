@@ -10,15 +10,42 @@ import Foundation
 import Cocoa
 
 class SettingsController: NSViewController {
-
-    @IBOutlet weak var templatesURL: NSTextField!
     
+    
+    // - - - - - - - - - - -
+    // MARK: Parameters
+    // - - - - - - - - - - -
+    @IBOutlet weak var templatesURL: NSTextField!
+    @IBOutlet var browseButton: NSButton!
+    @IBOutlet var saveButton: NSButton!
+    
+    
+    //
+    // Custom Classes
+    //
+    let Utils = Utility()
+    
+    // - - - - - - - - - - -
+    // MARK: View Did Load
+    // - - - - - - - - - - -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let docFold = NSUserDefaults.standardUserDefaults().objectForKey( "templatesFolder" ) {
+        //Style Interface
+        self.styleInterface()
+        
+        // Compile templatesURL TExt Field if a templates folder already exists in nsuserdefault
+        if let docFold = NSUserDefaults.standardUserDefaults().objectForKey( Utils.templateKey ) {
             templatesURL.stringValue = docFold as! String
         }
+        
+    }
+    
+    func styleInterface () {
+        
+        Utils.styleButton(browseButton, cornerRadius: 4, borderWidth: 1, background: false, whiteText: false)
+        Utils.styleButton(saveButton, cornerRadius: 4, borderWidth: 0, background: true, whiteText: true)
+        Utils.styleText( templatesURL )
         
     }
     
@@ -30,12 +57,32 @@ class SettingsController: NSViewController {
         
         //Get current window
         let w : NSWindow = self.view.window!
-        w.titleVisibility = .Hidden
-        w.titlebarAppearsTransparent = true
-        w.movableByWindowBackground = true
-        w.backgroundColor = NSColor.whiteColor()
+        Utils.styleWindow( w )
     }
-    @IBAction func browseFolder(sender: AnyObject) {
+    
+    override var representedObject: AnyObject? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+    
+    
+    // - - - - - - - - - - - - - -
+    // MARK: App functionality
+    // - - - - - - - - - - - - - -
+    
+    //
+    // Browse a folder
+    //
+    @IBAction func browseFolder(sender: NSButton ) {
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseDownMask.rawValue ) ) {
+            sender.alphaValue = 0.6
+        }
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseUpMask.rawValue ) ) {
+            sender.alphaValue = 1
+        }
         
         let openPanel = NSOpenPanel()
         
@@ -53,54 +100,36 @@ class SettingsController: NSViewController {
                 
             }
         }
-        
-    }
-    
-    override var representedObject: AnyObject? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-    
-    // Create dialog box on screen
-    func popup(question: String, text: String) -> Bool {
-        let myPopup: NSAlert = NSAlert()
-        myPopup.messageText = question
-        myPopup.informativeText = text
-        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
-        myPopup.addButtonWithTitle("OK")
-        let res = myPopup.runModal()
-        if res == 1000 {
-            return true
-        }
-        return false
     }
 
-    @IBAction func SaveFolder(sender: AnyObject) {
+    @IBAction func SaveFolder(sender: NSButton ) {
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseDownMask.rawValue ) ) {
+            sender.alphaValue = 0.6
+        }
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseUpMask.rawValue ) ) {
+            sender.alphaValue = 1
+        }
         
         let folderURLString = templatesURL.stringValue
         
         if folderURLString != "" {
             
-            var isDirectory: ObjCBool = false
-            NSFileManager.defaultManager().fileExistsAtPath( folderURLString , isDirectory: &isDirectory)
+            if Utils.isADirectory( folderURLString ) {
             
-            if isDirectory {
-            
-                NSUserDefaults.standardUserDefaults().setObject(folderURLString, forKey: "templatesFolder" )
+                NSUserDefaults.standardUserDefaults().setObject(folderURLString, forKey: Utils.templateKey )
                 
-                popup("Message", text: "Folder saved successfully")
+                Utils.popup("Message", text: "Folder saved successfully")
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
             
             } else {
-                popup("Error", text: "The url isn't a folder")
+                Utils.popup("Error", text: "The url isn't a folder")
             }
             
-            
-            
         } else {
-            popup("Error", text: "Insert a folder url")
+            Utils.popup("Error", text: "Insert a folder url")
         }
         
     }

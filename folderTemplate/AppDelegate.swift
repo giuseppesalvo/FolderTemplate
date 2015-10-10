@@ -35,5 +35,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    @IBAction func openTemplateFolders(sender: AnyObject) {
+        
+        let Utils = Utility()
+
+        if let url = NSUserDefaults.standardUserDefaults().objectForKey( Utils.templateKey ) {
+            NSWorkspace.sharedWorkspace().openFile( url as! String , withApplication: "Finder" )
+        } else {
+            Utils.popup( "Error" , text: "Insert your folder templates in settings" )
+        }
+        
+       
+    }
 }
 

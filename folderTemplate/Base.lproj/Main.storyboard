@@ -38,6 +38,12 @@
                                                 <action selector="ResetApplication:" target="Voe-Tx-rLC" id="kQO-Oz-rNv"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Open templates' folder" id="98h-Wj-neh">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="openTemplateFolders:" target="Voe-Tx-rLC" id="hwq-hU-ke5"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -97,7 +103,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="folderTemplate" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.5" y="-181"/>
+            <point key="canvasLocation" x="367.5" y="-9"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -121,8 +127,8 @@
         <scene sceneID="Su0-oA-1Ef">
             <objects>
                 <windowController storyboardIdentifier="SettingsController" id="6U0-67-G8A" sceneMemberID="viewController">
-                    <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="lAi-ys-xbt">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                    <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="lAi-ys-xbt">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="298" height="118"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -133,7 +139,7 @@
                 </windowController>
                 <customObject id="OwL-oZ-3Y6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="173"/>
+            <point key="canvasLocation" x="648" y="388"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="dml-QX-ZLh">
@@ -143,28 +149,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="344" height="126"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qi-dfs">
-                                <rect key="frame" x="43" y="54" width="154" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Type here the url" drawsBackground="YES" id="VwA-ue-I0Y">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baC-WI-Yqc">
-                                <rect key="frame" x="64" y="89" width="216" height="17"/>
+                                <rect key="frame" x="64" y="100" width="216" height="17"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Templates Folder" id="XaZ-Ps-0vC">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMG-2O-iYS">
-                                <rect key="frame" x="199" y="48" width="109" height="32"/>
+                                <rect key="frame" x="216" y="55" width="74" height="26"/>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="Browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WXp-0J-leB">
+                                <buttonCell key="cell" type="bevel" title="Browse" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="WXp-0J-leB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -173,9 +170,9 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHZ-uj-STP">
-                                <rect key="frame" x="37" y="13" width="271" height="32"/>
+                                <rect key="frame" x="135" y="13" width="74" height="26"/>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X8F-Pq-N1r">
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="X8F-Pq-N1r">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -183,16 +180,32 @@
                                     <action selector="SaveFolder:" target="aKy-J0-m9Y" id="bEJ-bf-O7i"/>
                                 </connections>
                             </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGb-ek-STM">
+                                <rect key="frame" x="55" y="55" width="158" height="1"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="axesIndependently" image="separator" id="lbj-yP-bDP"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qi-dfs">
+                                <rect key="frame" x="53" y="55" width="158" height="22"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Type here the url" id="VwA-ue-I0Y">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <animations/>
                     </view>
                     <connections>
+                        <outlet property="browseButton" destination="PMG-2O-iYS" id="fIS-TS-81Y"/>
+                        <outlet property="saveButton" destination="MHZ-uj-STP" id="2xd-W7-Lud"/>
                         <outlet property="templatesURL" destination="Mc7-qi-dfs" id="lfw-Od-pma"/>
                     </connections>
                 </viewController>
                 <customObject id="QdL-Ox-C1i" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="542"/>
+            <point key="canvasLocation" x="648" y="677"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -273,7 +286,7 @@
                                 </clipView>
                                 <animations/>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="h19-lL-iUI">
-                                    <rect key="frame" x="0.0" y="160" width="325" height="16"/>
+                                    <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </scroller>
@@ -346,7 +359,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-fu-kkc">
-                                <rect key="frame" x="133" y="22" width="74" height="26"/>
+                                <rect key="frame" x="133" y="23" width="74" height="26"/>
                                 <animations/>
                                 <buttonCell key="cell" type="bevel" title="Create" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6dP-mA-FBv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -369,7 +382,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="118" y="789.5"/>
+            <point key="canvasLocation" x="56" y="676.5"/>
         </scene>
     </scenes>
     <resources>

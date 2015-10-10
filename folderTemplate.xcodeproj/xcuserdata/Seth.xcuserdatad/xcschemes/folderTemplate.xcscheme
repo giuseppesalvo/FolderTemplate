@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D21FCAD1BC704960009ABEF"
-               BuildableName = "folderTemplate.app"
-               BlueprintName = "folderTemplate"
+               BuildableName = "Scaffolder.app"
+               BlueprintName = "Scaffolder"
                ReferencedContainer = "container:folderTemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D21FCAD1BC704960009ABEF"
-            BuildableName = "folderTemplate.app"
-            BlueprintName = "folderTemplate"
+            BuildableName = "Scaffolder.app"
+            BlueprintName = "Scaffolder"
             ReferencedContainer = "container:folderTemplate.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,8 +76,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D21FCAD1BC704960009ABEF"
-            BuildableName = "folderTemplate.app"
-            BlueprintName = "folderTemplate"
+            BuildableName = "Scaffolder.app"
+            BlueprintName = "Scaffolder"
             ReferencedContainer = "container:folderTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,8 +95,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D21FCAD1BC704960009ABEF"
-            BuildableName = "folderTemplate.app"
-            BlueprintName = "folderTemplate"
+            BuildableName = "Scaffolder.app"
+            BlueprintName = "Scaffolder"
             ReferencedContainer = "container:folderTemplate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

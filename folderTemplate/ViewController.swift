@@ -10,93 +10,61 @@ import Cocoa
 
 class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
-    var folders : Array<String> = []
-    var documentsUrl :String!
+    // - - - - - - - - - - -
+    // MARK: Parameters
+    // - - - - - - - - - - -
+    var folders         : Array<String> = []
+    var documentsUrl    : String!
+    var thereIsFolders  : Bool!
     
-    @IBOutlet var foldersTable: NSTableView!
-
-    @IBOutlet var broseTextField: NSTextField!
-    @IBOutlet var folderNameTextField: NSTextField!
+    //
+    // Elements in view
+    //
+    @IBOutlet var foldersTable          : NSTableView!
+    @IBOutlet var broseTextField        : NSTextField!
+    @IBOutlet var folderNameTextField   : NSTextField!
+    @IBOutlet var createButton          : NSButton!
+    @IBOutlet var browseButton          : NSButton!
+    @IBOutlet weak var settingsButton   : NSButton!
     
-    @IBOutlet var createButton: NSButton!
-    @IBOutlet var browseButton: NSButton!
-    @IBOutlet weak var settingsButton: NSButton!
+    
+    //
+    // Custom Classes
+    //
+    let Utils = Utility()
+    
+    
+    // - - - - - - - - - - - - -
+    // MARK: View Did Load
+    // - - - - - - - - - - - - -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        broseTextField.focusRingType = .None
-        folderNameTextField.focusRingType = .None
+        //Style Interface
+        self.styleInterface()
         
-        browseButton.wantsLayer = true
-        browseButton.layer?.cornerRadius = 4
-        browseButton.layer?.borderWidth = 1
-        let colorBlue : NSColor = NSColor( red: 42.0/255, green: 157.0/255, blue: 234.0/255, alpha: 1.0 )
-        browseButton.layer?.borderColor = colorBlue.CGColor
-        
-        createButton.wantsLayer = true
-        createButton.layer?.cornerRadius = 4
-        createButton.layer?.backgroundColor = colorBlue.CGColor
-        
-        /*
-        NSColor *color = [NSColor greenColor];
-        NSMutableAttributedString *colorTitle = [[NSMutableAttributedString alloc] initWithAttributedString:[button attributedTitle]];
-        NSRange titleRange = NSMakeRange(0, [colorTitle length]);
-        [colorTitle addAttribute:NSForegroundColorAttributeName value:color range:titleRange];
-        [button setAttributedTitle:colorTitle];
-        */
-        
-        let coloredTitle : NSMutableAttributedString = NSMutableAttributedString(attributedString: browseButton.attributedTitle ) as NSMutableAttributedString
-        let range : NSRange = NSMakeRange(0, coloredTitle.length)
-        coloredTitle.addAttribute(NSForegroundColorAttributeName, value: colorBlue, range: range)
-        browseButton.attributedTitle = coloredTitle
-        
-        let coloredTitlee : NSMutableAttributedString = NSMutableAttributedString(attributedString: createButton.attributedTitle ) as NSMutableAttributedString
-        let rangee : NSRange = NSMakeRange(0, coloredTitlee.length)
-        coloredTitlee.addAttribute(NSForegroundColorAttributeName, value: NSColor.whiteColor(), range: rangee)
-        createButton.attributedTitle = coloredTitlee
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadFolders", name:"ReloadFoldersTable", object: nil)
-        
-        if let docFold = NSUserDefaults.standardUserDefaults().objectForKey( "templatesFolder" ) {
+        // Check if it's first open
+        if let docFold = NSUserDefaults.standardUserDefaults().objectForKey( Utils.templateKey ) {
             documentsUrl = docFold as! String
         } else {
-            popup("Message", text: "Go to settings and insert your templates folder")
+            Utils.popup("Message", text: "Go to settings and insert your templates folder")
         }
         
+        // Load folders
         loadFolders()
+        
+        // Add an Observer for reload table from any controller
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadFolders", name:"ReloadFoldersTable", object: nil)
     }
     
-    func reloadTable () {
-        if self.folders.count <= 0 {
-            self.folders.append("No folders Matched")
-        }
-        self.foldersTable.reloadData()
-    }
-    
-    func loadFolders () {
-        var files : [String]?
-        self.folders = []
+    //
+    // Set style of interface
+    //
+    func styleInterface () {
+        Utils.styleText( broseTextField, folderNameTextField )
         
-        if let doc = NSUserDefaults.standardUserDefaults().objectForKey( "templatesFolder" ) {
-            self.documentsUrl = doc as! String
-            let filemanager:NSFileManager = NSFileManager.defaultManager()
-            do {
-                files = try filemanager.contentsOfDirectoryAtPath(self.documentsUrl)
-            } catch let error as NSError {
-                print( error )
-            }
-            
-            for f in files! {
-                var isDirectory: ObjCBool = false
-                filemanager.fileExistsAtPath(self.documentsUrl + "/" + f, isDirectory: &isDirectory)
-                if isDirectory {
-                    self.folders.append( f )
-                }
-            }
-        }
-        
-        self.reloadTable()
-        
+        Utils.styleButton( browseButton, cornerRadius: 4, borderWidth: 1, background: false , whiteText: false )
+        Utils.styleButton( createButton, cornerRadius: 4, borderWidth: 0, background: true  , whiteText: true  )
     }
     
     // - - - - - - - - - - - - -
@@ -107,23 +75,72 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
         //Get current window
         let w : NSWindow = self.view.window!
-        w.titleVisibility = .Hidden
-        w.titlebarAppearsTransparent = true
-        w.movableByWindowBackground = true
-        w.backgroundColor = NSColor.whiteColor()
+        Utils.styleWindow( w )
     }
     
-
     override var representedObject: AnyObject? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
     
+    // - - - - - - - - - - - -
+    // MARK: Folder Table View
+    // - - - - - - - - - - - -
+    
+    //
+    // Reload Table View Data
+    //
+    func reloadTable () {
+        if self.folders.count <= 0 {
+            self.folders.append("No folders Matched")
+            self.thereIsFolders = false
+        } else {
+            self.thereIsFolders = true
+        }
+        self.foldersTable.reloadData()
+    }
+    
+    //
+    // Load Folders from url
+    //
+    func loadFolders () {
+        var files : [String]?
+        self.folders = []
+        
+        if let doc = NSUserDefaults.standardUserDefaults().objectForKey( Utils.templateKey ) {
+            
+            self.documentsUrl = doc as! String
+            let filemanager:NSFileManager = NSFileManager.defaultManager()
+            
+            do {
+                
+                files = try filemanager.contentsOfDirectoryAtPath( self.documentsUrl )
+                
+                for f in files! {
+                    let path = self.documentsUrl + "/" + f
+                    if Utils.isADirectory( path ) {
+                        self.folders.append( f )
+                    }
+                }
+                
+            } catch let error as NSError {
+                Utils.popup( "Error" , text: "Error while reading folder" )
+                print( error )
+            }
+        }
+        
+        self.reloadTable()
+        
+    }
+    
+    //
+    // Table View's delegate
+    //
+    
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int
     {
-        //let numberOfRows:Int = 20
-        let numberOfRows:Int = self.folders.count
+        let numberOfRows : Int = self.folders.count
         return numberOfRows
     }
     
@@ -149,8 +166,20 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         return 42
     }
     
+    // - - - - - - - -
+    // MARK: Browse Button
+    // - - - - - - - -
     
-    @IBAction func broseButton(sender: AnyObject) {
+    @IBAction func broseButton(sender : NSButton ) {
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseDownMask.rawValue ) ) {
+            sender.alphaValue = 0.6
+        }
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseUpMask.rawValue ) ) {
+            sender.alphaValue = 1
+        }
+        
         let openPanel = NSOpenPanel()
         
         openPanel.allowsMultipleSelection  = false
@@ -170,60 +199,74 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         
     }
     
-    // Create dialog box on screen
-    func popup(question: String, text: String) -> Bool {
-        let myPopup: NSAlert = NSAlert()
-        myPopup.messageText = question
-        myPopup.informativeText = text
-        myPopup.alertStyle = NSAlertStyle.WarningAlertStyle
-        myPopup.addButtonWithTitle("OK")
-        let res = myPopup.runModal()
-        if res == 1000 {
-            return true
-        }
-        return false
-    }
-    
-    @IBAction func CopyTemplate(sender: AnyObject) {
-        
-        let dest = broseTextField.stringValue
-        let foldername = folderNameTextField.stringValue
+    // - - - - - - - - - - - - - - - - - - - - - -
+    // MARK: Copy template to destination folder
+    // - - - - - - - - - - - - - - - - - - - - - -
+    func Copy () {
+        let dest         = broseTextField.stringValue
+        let foldername   = folderNameTextField.stringValue
         let selRow : Int = ( foldersTable.selectedRow > -1 ? foldersTable.selectedRow : 0 )
         let templatePath = documentsUrl + "/" + folders[ selRow ]
         
         if broseTextField.stringValue != "" && foldername != "" {
-        
-            let nsfile : NSFileManager = NSFileManager.defaultManager()
             
-            let destPath = dest + "/" + foldername
-
-            do {
-            
-                try nsfile.copyItemAtPath( templatePath , toPath: destPath  )
-                popup("Success", text: "Template copied successfully")
+            if Utils.isADirectory( dest ) {
                 
-            } catch let error as NSError {
-            
-                popup( "Error while creation" , text: "info: \(error.description)" )
-                print( error.description )
-            
+                let nsfile : NSFileManager = NSFileManager.defaultManager()
+                
+                let destPath = dest + "/" + foldername
+                
+                do {
+                    
+                    try nsfile.copyItemAtPath( templatePath , toPath: destPath  )
+                    Utils.popup("Success", text: "Template copied successfully")
+                    
+                } catch let error as NSError {
+                    
+                    Utils.popup( "Error while creation" , text: "info: \(error.description)" )
+                    print( error.description )
+                    
+                }
+                
+            } else {
+                
+                Utils.popup( "Error" , text: "Destination isn't a directory" )
+                
             }
             
+            
+            
         } else {
-            popup( "Error" , text: "Compile all texts" )
+            
+            Utils.popup( "Error" , text: "Compile all texts" )
+            
+        }
+    }
+    
+    @IBAction func CopyTemplate(sender: NSButton ) {
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseDownMask.rawValue ) ) {
+            sender.alphaValue = 0.6
+        }
+        
+        if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseUpMask.rawValue ) ) {
+            sender.alphaValue = 1
+        }
+        
+        
+        if self.thereIsFolders == true {
+            Copy()
+        } else {
+            Utils.popup( "Error", text: "No templates matched" )
         }
     
     }
+    
+    
+    // Reload table from button
     @IBAction func reloadTableButton(sender: AnyObject) {
         loadFolders()
     }
 
-    @IBAction func openTemplateFolder(sender: AnyObject) {
-        /*
-        NSString* folder = @"/path/to/folder"
-        [[NSWorkspace sharedWorkspace]openFile:folder withApplication:@"Finder"];
-        */
-        NSWorkspace.sharedWorkspace().openFile(self.documentsUrl, withApplication: "Finder" )
-    }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D14979C1BC85D72009E5F67 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D14979B1BC85D72009E5F67 /* Utility.swift */; settings = {ASSET_TAGS = (); }; };
 		5D21FCB21BC704960009ABEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D21FCB11BC704960009ABEF /* AppDelegate.swift */; };
 		5D21FCB41BC704960009ABEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D21FCB31BC704960009ABEF /* ViewController.swift */; };
 		5D21FCB61BC704960009ABEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D21FCB51BC704960009ABEF /* Assets.xcassets */; };
@@ -35,7 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D21FCAE1BC704960009ABEF /* folderTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = folderTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D14979B1BC85D72009E5F67 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		5D21FCAE1BC704960009ABEF /* Scaffolder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scaffolder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D21FCB11BC704960009ABEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D21FCB31BC704960009ABEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D21FCB51BC704960009ABEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		5D21FCAF1BC704960009ABEF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D21FCAE1BC704960009ABEF /* folderTemplate.app */,
+				5D21FCAE1BC704960009ABEF /* Scaffolder.app */,
 				5D21FCBF1BC704960009ABEF /* folderTemplateTests.xctest */,
 				5D21FCCA1BC704960009ABEF /* folderTemplateUITests.xctest */,
 			);
@@ -102,6 +104,7 @@
 				5D21FCB11BC704960009ABEF /* AppDelegate.swift */,
 				5D21FCDC1BC718230009ABEF /* CustomRow.swift */,
 				5D21FCB31BC704960009ABEF /* ViewController.swift */,
+				5D14979B1BC85D72009E5F67 /* Utility.swift */,
 				9C90FC861BC7A73C0008E833 /* SettingsController.swift */,
 				5D21FCB51BC704960009ABEF /* Assets.xcassets */,
 				5D21FCB71BC704960009ABEF /* Main.storyboard */,
@@ -131,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D21FCAD1BC704960009ABEF /* folderTemplate */ = {
+		5D21FCAD1BC704960009ABEF /* Scaffolder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D21FCD31BC704960009ABEF /* Build configuration list for PBXNativeTarget "folderTemplate" */;
+			buildConfigurationList = 5D21FCD31BC704960009ABEF /* Build configuration list for PBXNativeTarget "Scaffolder" */;
 			buildPhases = (
 				5D21FCAA1BC704960009ABEF /* Sources */,
 				5D21FCAB1BC704960009ABEF /* Frameworks */,
@@ -143,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = folderTemplate;
+			name = Scaffolder;
 			productName = folderTemplate;
-			productReference = 5D21FCAE1BC704960009ABEF /* folderTemplate.app */;
+			productReference = 5D21FCAE1BC704960009ABEF /* Scaffolder.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5D21FCBE1BC704960009ABEF /* folderTemplateTests */ = {
@@ -219,7 +222,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5D21FCAD1BC704960009ABEF /* folderTemplate */,
+				5D21FCAD1BC704960009ABEF /* Scaffolder */,
 				5D21FCBE1BC704960009ABEF /* folderTemplateTests */,
 				5D21FCC91BC704960009ABEF /* folderTemplateUITests */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D14979C1BC85D72009E5F67 /* Utility.swift in Sources */,
 				9C90FC871BC7A73C0008E833 /* SettingsController.swift in Sources */,
 				5D21FCB41BC704960009ABEF /* ViewController.swift in Sources */,
 				5D21FCB21BC704960009ABEF /* AppDelegate.swift in Sources */,
@@ -285,12 +289,12 @@
 /* Begin PBXTargetDependency section */
 		5D21FCC11BC704960009ABEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5D21FCAD1BC704960009ABEF /* folderTemplate */;
+			target = 5D21FCAD1BC704960009ABEF /* Scaffolder */;
 			targetProxy = 5D21FCC01BC704960009ABEF /* PBXContainerItemProxy */;
 		};
 		5D21FCCC1BC704960009ABEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5D21FCAD1BC704960009ABEF /* folderTemplate */;
+			target = 5D21FCAD1BC704960009ABEF /* Scaffolder */;
 			targetProxy = 5D21FCCB1BC704960009ABEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -394,7 +398,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = folderTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppesalvo.folderTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppesalvo.scaffolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -406,7 +410,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = folderTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppesalvo.folderTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.giuseppesalvo.scaffolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -475,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D21FCD31BC704960009ABEF /* Build configuration list for PBXNativeTarget "folderTemplate" */ = {
+		5D21FCD31BC704960009ABEF /* Build configuration list for PBXNativeTarget "Scaffolder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D21FCD41BC704960009ABEF /* Debug */,
