@@ -93,7 +93,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
     //
     func reloadTable () {
         if self.folders.count <= 0 {
-            self.folders.append("No folders Matched")
+            self.folders.append("Empty folder")
             self.thereIsFolders = false
         } else {
             self.thereIsFolders = true
@@ -219,7 +219,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
                 do {
                     
                     try nsfile.copyItemAtPath( templatePath , toPath: destPath  )
-                    Utils.popup("Success", text: "Template copied successfully")
+                    Utils.popup("Success", text: "Template successfully created")
                     
                 } catch let error as NSError {
                     
@@ -238,7 +238,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             
         } else {
             
-            Utils.popup( "Error" , text: "Compile all texts" )
+            Utils.popup( "Error" , text: "There are empty texts" )
             
         }
     }
@@ -257,7 +257,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         if self.thereIsFolders == true {
             Copy()
         } else {
-            Utils.popup( "Error", text: "No templates matched" )
+            Utils.popup( "Error", text: "Empty folder" )
         }
     
     }

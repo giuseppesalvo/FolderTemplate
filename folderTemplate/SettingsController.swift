@@ -120,16 +120,16 @@ class SettingsController: NSViewController {
             
                 NSUserDefaults.standardUserDefaults().setObject(folderURLString, forKey: Utils.templateKey )
                 
-                Utils.popup("Message", text: "Folder saved successfully")
+                Utils.popup("Message", text: "Folder successfully saved")
                 
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadFoldersTable", object: nil)
             
             } else {
-                Utils.popup("Error", text: "The url isn't a folder")
+                Utils.popup("Error", text: "This url isn't a folder")
             }
             
         } else {
-            Utils.popup("Error", text: "Insert a folder url")
+            Utils.popup("Error", text: "Write the url")
         }
         
     }

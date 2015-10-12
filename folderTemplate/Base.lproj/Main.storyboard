@@ -100,7 +100,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="folderTemplate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Scaffolder" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="367.5" y="-9"/>
@@ -111,7 +111,6 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="443" height="199"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
@@ -129,7 +128,6 @@
                 <windowController storyboardIdentifier="SettingsController" id="6U0-67-G8A" sceneMemberID="viewController">
                     <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="lAi-ys-xbt">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="298" height="118"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                     </window>
@@ -144,15 +142,15 @@
         <!--Settings Controller-->
         <scene sceneID="dml-QX-ZLh">
             <objects>
-                <viewController storyboardIdentifier="SettingsController" id="aKy-J0-m9Y" customClass="SettingsController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsController" id="aKy-J0-m9Y" customClass="SettingsController" customModule="Scaffolder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dvJ-Lq-Qih">
                         <rect key="frame" x="0.0" y="0.0" width="344" height="126"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baC-WI-Yqc">
-                                <rect key="frame" x="64" y="100" width="216" height="17"/>
+                                <rect key="frame" x="64" y="96" width="216" height="17"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Templates Folder" id="XaZ-Ps-0vC">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Templates" id="XaZ-Ps-0vC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -211,7 +209,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="folderTemplate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Scaffolder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="XSF-72-Z66">
                         <rect key="frame" x="0.0" y="0.0" width="340" height="351"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -243,7 +241,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView focusRingType="exterior" id="EaH-60-zhb" customClass="CustomCell" customModule="folderTemplate" customModuleProvider="target">
+                                                        <tableCellView focusRingType="exterior" id="EaH-60-zhb" customClass="CustomCell" customModule="Scaffolder" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="297" height="42"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -306,9 +304,9 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-AX-Avl">
-                                <rect key="frame" x="18" y="74" width="216" height="22"/>
+                                <rect key="frame" x="18" y="74" width="304" height="22"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Name of new folder" id="cFT-1g-0ff">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" placeholderString="Template's name in destination folder" id="cFT-1g-0ff">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
