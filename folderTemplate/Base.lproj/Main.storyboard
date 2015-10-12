@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="folderTemplate" id="1Xt-HY-uBw">
+                            <menuItem title="Scaffolder" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="folderTemplate" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Scaffolder" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About folderTemplate" id="5kV-Vb-QxS">
+                                        <menuItem title="About Scaffolder" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -32,7 +32,7 @@
                                                 <action selector="ReloadFoldersFromMenu:" target="Voe-Tx-rLC" id="Xmq-2R-kiK"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Reset app ( this will close the app )" id="Xo9-J8-J6k">
+                                        <menuItem title="Reset app ( this close the app )" id="Xo9-J8-J6k">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="ResetApplication:" target="Voe-Tx-rLC" id="kQO-Oz-rNv"/>
