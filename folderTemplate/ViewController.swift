@@ -243,6 +243,30 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
         }
     }
     
+    func validateCopy () -> Bool {
+       
+        if self.thereIsFolders == true {
+            
+            if foldersTable.selectedRow > -1 {
+                
+                return true
+                
+            } else {
+                
+                Utils.popup( "Error" , text: "Select a template" )
+                return false
+            
+            }
+            
+        } else {
+            
+            Utils.popup( "Error", text: "Empty folder" )
+            return false
+        
+        }
+   
+    }
+    
     @IBAction func CopyTemplate(sender: NSButton ) {
         
         if let _ = self.view.window?.nextEventMatchingMask( Int( NSEventMask.LeftMouseDownMask.rawValue ) ) {
@@ -253,12 +277,7 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
             sender.alphaValue = 1
         }
         
-        
-        if self.thereIsFolders == true {
-            Copy()
-        } else {
-            Utils.popup( "Error", text: "Empty folder" )
-        }
+        if self.validateCopy() { Copy() }
     
     }
     
