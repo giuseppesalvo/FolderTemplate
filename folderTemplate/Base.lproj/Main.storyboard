@@ -287,13 +287,13 @@
                                     <action selector="CopyTemplate:" target="XfG-lQ-9wD" id="Jfk-VH-8ir"/>
                                 </connections>
                             </button>
-                            <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-Q2-J71">
+                            <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="43" horizontalPageScroll="10" verticalLineScroll="43" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mn1-Q2-J71">
                                 <rect key="frame" x="20" y="137" width="300" height="183"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="sFV-pw-ZLn">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="183"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="42" rowSizeStyle="automatic" viewBased="YES" id="qFu-Jp-dSK">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="41" rowSizeStyle="automatic" viewBased="YES" id="qFu-Jp-dSK">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="183"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
@@ -315,11 +315,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView focusRingType="exterior" id="EaH-60-zhb" customClass="CustomCell" customModule="Scaffolder" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="297" height="42"/>
+                                                            <rect key="frame" x="1" y="1" width="297" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OG7-sZ-axD">
-                                                                    <rect key="frame" x="41" y="0.0" width="255" height="31"/>
+                                                                    <rect key="frame" x="53" y="3" width="230" height="26"/>
                                                                     <animations/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="YF8-LO-3kM">
                                                                         <font key="font" metaFont="systemLight" size="13"/>
@@ -328,12 +328,12 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-zN-p2x">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="1"/>
+                                                                    <rect key="frame" x="15" y="-1" width="270" height="1"/>
                                                                     <animations/>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="separator" id="OYk-jj-faw"/>
                                                                 </imageView>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG9-FD-8fA">
-                                                                    <rect key="frame" x="0.0" y="8" width="32" height="32"/>
+                                                                    <rect key="frame" x="15" y="5" width="32" height="32"/>
                                                                     <animations/>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="folder" id="KBj-jB-dmY"/>
                                                                 </imageView>
@@ -380,7 +380,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="56" y="675"/>
+            <point key="canvasLocation" x="56" y="673"/>
         </scene>
     </scenes>
     <resources>
@@ -390,6 +390,6 @@
         <image name="update" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ABl-Sj-kUi"/>
+        <segue reference="wAK-Vj-sLH"/>
     </inferredMetricsTieBreakers>
 </document>
