@@ -126,9 +126,9 @@
         <scene sceneID="Su0-oA-1Ef">
             <objects>
                 <windowController storyboardIdentifier="SettingsController" id="6U0-67-G8A" sceneMemberID="viewController">
-                    <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="lAi-ys-xbt">
+                    <window key="window" title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" hidesOnDeactivate="YES" oneShot="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="lAi-ys-xbt">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
-                        <rect key="contentRect" x="163" y="199" width="298" height="118"/>
+                        <rect key="contentRect" x="163" y="199" width="314" height="127"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                     </window>
                     <connections>
@@ -137,7 +137,7 @@
                 </windowController>
                 <customObject id="OwL-oZ-3Y6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="388"/>
+            <point key="canvasLocation" x="633" y="466.5"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="dml-QX-ZLh">
@@ -241,7 +241,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="openTemplateFolder:" target="XfG-lQ-9wD" id="Yfa-HC-vp8"/>
-                                    <segue destination="aKy-J0-m9Y" kind="show" id="wAK-Vj-sLH"/>
+                                    <segue destination="aKy-J0-m9Y" kind="modal" id="wAK-Vj-sLH"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-4c-Yml">
@@ -390,6 +390,6 @@
         <image name="update" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wAK-Vj-sLH"/>
+        <segue reference="ABl-Sj-kUi"/>
     </inferredMetricsTieBreakers>
 </document>
