@@ -148,6 +148,10 @@ class ViewController: NSViewController, NSTableViewDataSource, NSTableViewDelega
 
         let cell : CustomCell = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! CustomCell
         cell.title.stringValue = self.folders[ row ]
+        cell.wantsLayer = true
+        cell.layer?.cornerRadius = 4
+        cell.layer?.masksToBounds = true
+        
         return cell
     }
     
