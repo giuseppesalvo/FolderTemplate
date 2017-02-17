@@ -1,6 +1,6 @@
 # GS-FolderTemplate
 
-Save and manage your templates' folder easily
+Save and manage your app templates easily
 
 [Download](https://github.com/giuseppesalvo/GS-FolderTemplate/raw/master/Scaffolder.zip)
 
