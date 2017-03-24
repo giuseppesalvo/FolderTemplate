@@ -1,4 +1,4 @@
-# GS-FolderTemplate
+# FolderTemplate
 
 Save and manage your app templates easily
 
